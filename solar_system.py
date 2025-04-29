@@ -1,6 +1,7 @@
 from sun import Sun
 from planet import Planet
 from universal_gravity import UniversalGravity
+import math
 
 class SolarSystem:
     def __init__(self):
@@ -33,8 +34,8 @@ class SolarSystem:
             new_distance = math.sqrt(dist_x ** 2 + dist_y ** 2)
 
             # Let's calculate our new acceleration so we can set our new velocity
-            acc_x = U.G * self._the_sun.get_mass() * dist_x / new_distance ** 3
-            acc_y = U.G * self._the_sun.get_mass() * dist_y / new_distance ** 3
+            acc_x = UniversalGravity.G * self._the_sun.get_mass() * dist_x / new_distance ** 3
+            acc_y = UniversalGravity.G * self._the_sun.get_mass() * dist_y / new_distance ** 3
 
             # Now let's calculate the new x and y velocities and update them for the planet
             planet.set_x_vel(planet.get_x_vel() + dt * acc_x)
