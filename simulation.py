@@ -20,10 +20,10 @@ class Simulation:
         self._t.clear()
 
     def run(self):
-        #self._solar_system.show_planets()
+        self._solar_system.show_planets()
         for _ in range(self._num_periods):
             self._solar_system.move_planets()
-            #self._solar_system.show_planets()
+            self._solar_system.show_planets()
 
     def freeze(self):
         self._screen.exitonclick()
